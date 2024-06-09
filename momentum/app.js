@@ -105,3 +105,62 @@ function isCheck(age){
 
 const user = parseInt(prompt('수를 입력하시오'))
 isCheck(user); 
+
+ //Object 의 porperty 값 변경 
+ const textstyle = document.querySelector("div.title h1"); 
+ console.dir(textstyle);
+
+
+/* 이벤트 리스너 : on* 
+    사용 시에는 on 빼고 * 만 작성해야 한다. 
+*/
+ const eventTest = document.querySelector("div.event h2");  
+ console.dir(eventTest);      
+
+ 
+ function handler (){
+    console.log("클릭한거임.");
+    textstyle.style.color ="blue"
+ }
+
+ eventTest.addEventListener("click", handler) //함수를 바로 실행시키지 않는 것이 중요하다. 괄호를 넣지 않는 것이 중요. js 에 function 만 넘겨주고 대신 실행시키게 해준다. 
+
+ /* mouse */ 
+const mouse = document.querySelector("div.mouse h3"); 
+
+// mouse.addEventListener("mouseenter", mouseEvent); 
+// mouse.addEventListener("mouseleave", mouseEvent02); 
+
+function mouseEvent(){
+    console.log("마우스를 냅다 올림");
+}
+
+function mouseEvent02(){
+    console.log("마우스를 냅다 내림");
+}
+
+/* 이벤트 발생 방법 2가지 */
+// mouse.addEventListener("mouseenter", mouseEvent);  //이 방법을 더 선호하는 이유? => .removeEventListener 적용 가능 
+mouse.onmouseenter = mouseEvent; 
+
+/* Window Event */ 
+window.addEventListener("resize", handlerResize); 
+window.addEventListener("copy", copyBlocked); 
+window.addEventListener("offline", handleWindowOffline); 
+window.addEventListener("online", handleWindowOnline); 
+
+function handleWindowOffline(){
+    alert("no wifi"); //와이파이가 꺼져있을 때 
+}
+function handleWindowOnline(){
+    alert("connect wifi"); //와이파이 켜질 때 
+}
+
+function handlerResize(){
+    document.body.style.backgroundColor = "blue"
+}
+
+
+function copyBlocked(){
+    alert("copy noooppp!") 
+}
