@@ -1,0 +1,14 @@
+h1 {
+    color: blue;
+    transition: color .5s ease-in-out;
+}
+
+.active{
+    color: tomato; 
+}
+
+.border {
+    border: 10;
+    box-shadow: 2;
+    background-color: aquamarine;
+}
