@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../test01/style.css">
+</head>
+<body>
+    <!-- Html 을 열고, Js 와 Css 를 가져오는 것이다. 중간 접착제 역할!  -->
+
+    <!-- 보통 *ClassName* 을 사용하거나 id 둘 다 사용한다.  -->
+    <div class="title">
+        <h1> id 가 title 인 문장임1. </h1>
+        <h1> id 가 title 인 문장임2. </h1>
+        <h1> id 가 title 인 문장임3. </h1>
+    </div>
+
+    <div class="event">
+        <h2>EVENT</h2>
+    </div>
+
+    <div class= "mouse">
+        <h3>Mouse !! </h3>
+    </div>
+
+
+    <script src="../test01/app.js">
+
+        // 변수명 규칙(카멜케이스) : veryLongVariable (js) very_long_variable (x) 
+
+        //let vs const 차이점은? let은 새로운 것을 생성할 때, const 는 값이 변하지 않을 때 
+        // **기본적으로 , 대부분 const 만을 사용한다. (예전에는 var 만이 있었다. const oo 가끔 let o, var xx  ) 
+
+        //null : 값이 비어있음 undefined : 메모리에 할당은 됐는데, 값이 없음 
+
+        //배열에 추가! => add(x), append(x), push(o)!!! 
+
+        /* HTML을 JS로 가져오기 */
+        console.dir(title)
+        const titleId = document.getElementById("h1"); 
+        // const titleId = document.querySelector(#h1); 
+
+       /* tag : div, button, section */
+       const title =  document.getElementsByTagName("h1"); 
+       console.log(title); //이것은 배열임... 
+
+       /* element 를 가져오는 최고의 방법은??? querySelector && querySelectorAll!!  */
+       /* querySelector 는 element를 css 로 가져올 수 있게끔 한다.  */
+       const titleOne =  document.querySelector(".title h1"); //.title 클래스 네임에서 h1 을 가져와라  => 단 하나의 h1 만 출력
+    //    const titleOne =  document.querySelector(".title h1:first-child"); //.title 클래스 네임에서 h1 을 가져와라  => 단 하나의 h1 만 출력
+       
+       /* 거의 querySelector 를 사용한다!!! */
+       
+       const titleAll =  document.querySelectorAll(".title h1");
+       
+       
+    </script>
+</body>
+</html>
